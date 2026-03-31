@@ -16,15 +16,15 @@
     <children>
         <Label text="Heiti ferðar" GridPane.columnIndex="0" GridPane.rowIndex="0" />
         <Label text="Áfangastaður" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-        <Label text="Dagsetning" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Label text="Frá" GridPane.columnIndex="0" GridPane.rowIndex="2" />
         <TextField fx:id="fxHeiti" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-        <TextField fx:id="fxDagsetning" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <TextField fx:id="fxFra" GridPane.columnIndex="1" GridPane.rowIndex="2" />
         <TextField fx:id="fxAfangastadur" editable="true" layoutX="91.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Label text="Notes:" GridPane.rowIndex="4" />
+      <Label text="Notes" GridPane.rowIndex="4" />
       <TextArea fx:id="fxNotes" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <Label text="Lokadagur:" GridPane.rowIndex="3" />
-      <TextField fx:id="fxLokadagur" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <Label text="Útreikningur:" GridPane.rowIndex="5" />
+      <Label text="Til" GridPane.rowIndex="3" />
+      <TextField fx:id="fxTil" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label text="Útreikningur" GridPane.rowIndex="5" />
       <TextField fx:id="fxUtreikningur" GridPane.columnIndex="1" GridPane.rowIndex="5" />
     </children>
     <rowConstraints>

@@ -30,7 +30,8 @@ public class FerdDialogController implements GognInterface<Ferd>{
         this.ferd.set(f);
         fxFerdSpjald.heitiProperty().bindBidirectional (ferd.get().heitiProperty());
         fxFerdSpjald.afangastadurProperty().bindBidirectional (ferd.get().afangastadurProperty());
-        fxFerdSpjald.dagsetningProperty().bindBidirectional((ferd.get().dagsetningProperty()));
+        fxFerdSpjald.fraProperty().bindBidirectional((ferd.get().fraProperty()));
+        fxFerdSpjald.tilProperty().bindBidirectional((ferd.get().tilProperty()));
     }
 
 

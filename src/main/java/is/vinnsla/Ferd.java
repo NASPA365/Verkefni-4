@@ -1,18 +1,24 @@
 package is.vinnsla;
 
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 /******************************************************************************
  *  Nafn    : Ebba Þóra Hvannberg
  *  T-póstur: ebba@hi.is
  *  Lýsing  : Vinnsluklasi fyrir ferð sem hefur eiginleikana heiti, áfangastað
- *  og dagsetningu
+ *  og frá og til dagsetningar
  *
  *****************************************************************************/
 public class Ferd {
     private SimpleStringProperty heiti = new SimpleStringProperty();
     private SimpleStringProperty afangastadur = new SimpleStringProperty();
-    private SimpleStringProperty dagsetning = new SimpleStringProperty();
+    private SimpleStringProperty til = new SimpleStringProperty();
+
+    private SimpleStringProperty fra = new SimpleStringProperty();
+
+    private SimpleIntegerProperty fjoldi = new SimpleIntegerProperty(0);
+    private SimpleStringProperty heildarverd = new SimpleStringProperty("0kr");
 
     // get aðferðir
     public SimpleStringProperty heitiProperty() {
@@ -21,9 +27,17 @@ public class Ferd {
     public SimpleStringProperty afangastadurProperty() {
         return afangastadur;
     }
-    public SimpleStringProperty dagsetningProperty() {
-        return dagsetning;
+    public SimpleStringProperty fraProperty() {
+        return fra;
     }
+
+    public SimpleStringProperty tilProperty() {
+        return til;
+    }
+
+    public SimpleIntegerProperty fjoldiProperty() { return fjoldi; }
+    public SimpleStringProperty heildarverdProperty() { return heildarverd; }
+
 
     /**
      * Smíðar ferðina sem lýst er í strengnum ferd með eiginleikum aðgreind með ;
@@ -33,7 +47,10 @@ public class Ferd {
         String[] gogn = ferd.split(";");
         this.heiti.set(gogn[0]);
         this.afangastadur.set(gogn[1]);
-        this.dagsetning.set(gogn[2]);
+        this.fra.set(gogn[2]);
+        this.til.set(gogn[3]);
+        // Safe for missing fields
+        if (gogn.length > 4) this.heildarverd.set(gogn[4]);
     }
 
     public Ferd () {

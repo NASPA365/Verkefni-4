@@ -23,7 +23,10 @@ public class FerdSpjald extends GridPane {
     private TextField fxHeiti;
 
     @FXML
-    private TextField fxDagsetning;
+    private TextField fxFra;
+
+    @FXML
+    private TextField fxTil;
 
     @FXML
     private TextField fxAfangastadur;
@@ -54,8 +57,12 @@ public class FerdSpjald extends GridPane {
         return fxAfangastadur.textProperty();
     }
 
-    public Property<String> dagsetningProperty() {
-        return fxDagsetning.textProperty();
+    public Property<String> fraProperty() {
+        return fxFra.textProperty();
+    }
+
+    public Property<String> tilProperty() {
+        return fxTil.textProperty();
     }
 
 }

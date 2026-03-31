@@ -10,7 +10,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -35,7 +36,10 @@ public class AdalController {
     public static final String FERDIR_TXT = "/ferdir.txt";
 
     @FXML
-    private ListView<Ferd> fxListiFerdir;
+    private TableView<Ferd> fxListiFerdir;
+
+    @FXML
+    private TableColumn<Ferd, String> heitiColumn, afangastadurColumn, fraColumn, tilColumn;
 
     @FXML
     private Button fxEyda;
@@ -61,14 +65,22 @@ public class AdalController {
             fxSkilabod.setText(SKRA_FANNST_EKKI);
         }
         fxListiFerdir.setItems(ferdaplan.getFerdaListi());
+
+        heitiColumn.setCellValueFactory(c -> c.getValue().heitiProperty());
+        afangastadurColumn.setCellValueFactory(c -> c.getValue().afangastadurProperty());
+        fraColumn.setCellValueFactory(c -> c.getValue().fraProperty());
+        tilColumn.setCellValueFactory(c -> c.getValue().tilProperty());
+
         tengjaSkodaEydaHnappa();
         tengjaAtburdVidSkilabod();
         tengjaValinFerd();
 
+
+
         //bætt við þegar það er double clickað á ferð þá ferð það í skoða ferð automatically
         fxListiFerdir.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
-                Ferd selectedFerd = fxListiFerdir.getSelectionModel().getSelectedItem();
+                Ferd selectedFerd = fxListiFerdir.getSelectionModel().getSelectedItem(); //kannski breyta ---------------------------------------
                 if (selectedFerd != null) {
                     ferdaplan.skodaFerd(selectedFerd);
                     ViewSwitcher.switchTo(View.FERD, false, selectedFerd);
