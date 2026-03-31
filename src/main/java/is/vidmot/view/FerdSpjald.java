@@ -3,6 +3,7 @@ package is.vidmot.view;
 import javafx.beans.property.Property;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
@@ -30,6 +31,9 @@ public class FerdSpjald extends GridPane {
 
     @FXML
     private TextField fxAfangastadur;
+
+    @FXML
+    private TextArea fxNote;
 
 
     /**
@@ -63,6 +67,10 @@ public class FerdSpjald extends GridPane {
 
     public Property<String> tilProperty() {
         return fxTil.textProperty();
+    }
+
+    public Property<String> noteProperty() {
+        return fxNote.textProperty();
     }
 
 }

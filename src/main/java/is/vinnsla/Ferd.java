@@ -13,12 +13,12 @@ import javafx.beans.property.SimpleStringProperty;
 public class Ferd {
     private SimpleStringProperty heiti = new SimpleStringProperty();
     private SimpleStringProperty afangastadur = new SimpleStringProperty();
-    private SimpleStringProperty til = new SimpleStringProperty();
-
     private SimpleStringProperty fra = new SimpleStringProperty();
-
+    private SimpleStringProperty til = new SimpleStringProperty();
     private SimpleIntegerProperty fjoldi = new SimpleIntegerProperty(0);
     private SimpleStringProperty heildarverd = new SimpleStringProperty("0kr");
+
+    private SimpleStringProperty note = new  SimpleStringProperty("");
 
     // get aðferðir
     public SimpleStringProperty heitiProperty() {
@@ -35,6 +35,10 @@ public class Ferd {
         return til;
     }
 
+    public SimpleStringProperty noteProperty() {
+        return note;
+    }
+
     public SimpleIntegerProperty fjoldiProperty() { return fjoldi; }
     public SimpleStringProperty heildarverdProperty() { return heildarverd; }
 
@@ -49,9 +53,8 @@ public class Ferd {
         this.afangastadur.set(gogn[1]);
         this.fra.set(gogn[2]);
         this.til.set(gogn[3]);
-        // Safe for missing fields
-        if (gogn.length > 4) this.heildarverd.set(gogn[4]);
-    }
+        this.note.set(gogn[4]);
+        }
 
     public Ferd () {
 

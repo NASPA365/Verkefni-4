@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<fx:root hgap="5.0" type="javafx.scene.layout.GridPane" vgap="5.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root hgap="5.0" prefHeight="237.0" prefWidth="420.0" type="javafx.scene.layout.GridPane" vgap="5.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <columnConstraints>
         <ColumnConstraints hgrow="NEVER" />
         <ColumnConstraints hgrow="ALWAYS" />
@@ -21,18 +21,18 @@
         <TextField fx:id="fxFra" GridPane.columnIndex="1" GridPane.rowIndex="2" />
         <TextField fx:id="fxAfangastadur" editable="true" layoutX="91.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <Label text="Notes" GridPane.rowIndex="4" />
-      <TextArea fx:id="fxNotes" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <TextArea fx:id="fxNote" prefHeight="60.0" prefWidth="334.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
       <Label text="Til" GridPane.rowIndex="3" />
       <TextField fx:id="fxTil" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       <Label text="Útreikningur" GridPane.rowIndex="5" />
-      <TextField fx:id="fxUtreikningur" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <TextField fx:id="fxUtreikningur" prefWidth="334.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
     </children>
     <rowConstraints>
         <RowConstraints />
         <RowConstraints />
         <RowConstraints />
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="70.0" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" />
     </rowConstraints>
     <padding>

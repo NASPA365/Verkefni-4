@@ -34,6 +34,7 @@ public class FerdController implements GognInterface<Ferd> {
         fxFerdSpjald.afangastadurProperty().bind(f.afangastadurProperty());
         fxFerdSpjald.fraProperty().bind(f.fraProperty());
         fxFerdSpjald.tilProperty().bind(f.tilProperty());
+        fxFerdSpjald.noteProperty().bind(f.noteProperty());
     }
 
     /**
