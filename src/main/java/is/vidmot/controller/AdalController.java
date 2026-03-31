@@ -64,6 +64,18 @@ public class AdalController {
         tengjaSkodaEydaHnappa();
         tengjaAtburdVidSkilabod();
         tengjaValinFerd();
+
+        //bætt við þegar það er double clickað á ferð þá ferð það í skoða ferð automatically
+        fxListiFerdir.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                Ferd selectedFerd = fxListiFerdir.getSelectionModel().getSelectedItem();
+                if (selectedFerd != null) {
+                    ferdaplan.skodaFerd(selectedFerd);
+                    ViewSwitcher.switchTo(View.FERD, false, selectedFerd);
+                }
+            }
+        });
+
     }
 
     /**
