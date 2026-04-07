@@ -35,6 +35,9 @@ public class FerdSpjald extends GridPane {
     @FXML
     private TextArea fxNote;
 
+    @FXML
+    private TextField fxVerd;
+
 
     /**
      * Les inn .fxml skrá og setur controllerinn sem þessi hlutur
@@ -73,4 +76,7 @@ public class FerdSpjald extends GridPane {
         return fxNote.textProperty();
     }
 
+    public Property<String> verdProperty() {
+        return fxVerd.textProperty();
+    }
 }

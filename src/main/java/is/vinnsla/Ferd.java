@@ -1,6 +1,5 @@
 package is.vinnsla;
 
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 /******************************************************************************
@@ -11,14 +10,12 @@ import javafx.beans.property.SimpleStringProperty;
  *
  *****************************************************************************/
 public class Ferd {
-    private SimpleStringProperty heiti = new SimpleStringProperty();
-    private SimpleStringProperty afangastadur = new SimpleStringProperty();
-    private SimpleStringProperty fra = new SimpleStringProperty();
-    private SimpleStringProperty til = new SimpleStringProperty();
-    private SimpleIntegerProperty fjoldi = new SimpleIntegerProperty(0);
-    private SimpleStringProperty heildarverd = new SimpleStringProperty("0kr");
-
-    private SimpleStringProperty note = new  SimpleStringProperty("");
+    private final SimpleStringProperty heiti = new SimpleStringProperty();
+    private final SimpleStringProperty afangastadur = new SimpleStringProperty();
+    private final SimpleStringProperty fra = new SimpleStringProperty();
+    private final SimpleStringProperty til = new SimpleStringProperty();
+    private final SimpleStringProperty note = new  SimpleStringProperty("");
+    private final SimpleStringProperty verd = new  SimpleStringProperty("");
 
     // get aðferðir
     public SimpleStringProperty heitiProperty() {
@@ -30,17 +27,9 @@ public class Ferd {
     public SimpleStringProperty fraProperty() {
         return fra;
     }
-
-    public SimpleStringProperty tilProperty() {
-        return til;
-    }
-
-    public SimpleStringProperty noteProperty() {
-        return note;
-    }
-
-    public SimpleIntegerProperty fjoldiProperty() { return fjoldi; }
-    public SimpleStringProperty heildarverdProperty() { return heildarverd; }
+    public SimpleStringProperty tilProperty() {return til;}
+    public SimpleStringProperty noteProperty() { return note; }
+    public SimpleStringProperty verdProperty() { return verd;}
 
 
     /**
@@ -54,6 +43,7 @@ public class Ferd {
         this.fra.set(gogn[2]);
         this.til.set(gogn[3]);
         this.note.set(gogn[4]);
+        this.verd.set(gogn[5]);
         }
 
     public Ferd () {

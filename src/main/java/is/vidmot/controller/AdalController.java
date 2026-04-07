@@ -34,12 +34,13 @@ public class AdalController {
     private static final String FERD_VALIN = "Ferð %s valin";
     public static final String SKRA_FANNST_EKKI = "Skrá fannst ekki ";
     public static final String FERDIR_TXT = "/ferdir.txt";
+    public static final String FERD_BREYTT = "Ferð %s breytt";
 
     @FXML
     private TableView<Ferd> fxListiFerdir;
 
     @FXML
-    private TableColumn<Ferd, String> heitiColumn, afangastadurColumn, fraColumn, tilColumn;
+    private TableColumn<Ferd, String> heitiColumn, afangastadurColumn, fraColumn, tilColumn, verdColumn;
 
     @FXML
     private Button fxEyda;
@@ -70,6 +71,7 @@ public class AdalController {
         afangastadurColumn.setCellValueFactory(c -> c.getValue().afangastadurProperty());
         fraColumn.setCellValueFactory(c -> c.getValue().fraProperty());
         tilColumn.setCellValueFactory(c -> c.getValue().tilProperty());
+        verdColumn.setCellValueFactory(c -> c.getValue().verdProperty());
 
         tengjaSkodaEydaHnappa();
         tengjaAtburdVidSkilabod();
@@ -102,10 +104,9 @@ public class AdalController {
      * Hjálparaðferð sem gerir fxEyda og fxSkoda óvirka ef ekkert er valið
      */
     private void tengjaSkodaEydaHnappa() {
-        fxEyda.disableProperty().bind(
-                fxListiFerdir.getSelectionModel().selectedItemProperty().isNull());
-        fxSkoda.disableProperty().bind(
-                fxListiFerdir.getSelectionModel().selectedItemProperty().isNull());
+        var selected = fxListiFerdir.getSelectionModel().selectedItemProperty();
+        fxEyda.disableProperty().bind(selected.isNull());
+        fxSkoda.disableProperty().bind(selected.isNull());
     }
 
     /**
