@@ -24,9 +24,8 @@
                   <TableColumn fx:id="heitiColumn" prefWidth="140.0" text="Ferð" />
                   <TableColumn fx:id="afangastadurColumn" prefWidth="98.0" text="Áfangastaður" />
                   <TableColumn fx:id="fraColumn" prefWidth="81.0" text="frá" />
-            <TableColumn fx:id="tilColumn" prefWidth="81.0" text="til" />
-                  <TableColumn prefWidth="71.0" text="Fjöldi farðega" />  <!-- Add model prop later -->
-                  <TableColumn prefWidth="90.0" text="Heildarverð" />  <!-- Add model prop later -->
+                  <TableColumn fx:id="tilColumn" prefWidth="81.0" text="til" />
+                  <TableColumn fx:id="verdColumn" prefWidth="90.0" text="verð" />
               </columns>
           </TableView>
           <ButtonBar prefHeight="40.0" prefWidth="200.0">
