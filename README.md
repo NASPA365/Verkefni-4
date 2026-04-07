@@ -1,20 +1,52 @@
-# HBV201G-verkefni-2026
-Lausnir af verkefnum í námskeiðinu HBV201G Viðmótsforritun 2026.
+# Ferðaplan - JavaFX verkefni 4
 
-Skipulagt eftir verkefnum. Þetta repo er uppfært eftir að lausn á verkefni hefur verið birt eða uppfærð 
-Hvert verkefni er opnað sem sérstakt project í IntelliJ þannig að mappan fyrir verkefnið sé rótin.
+Forrit til að skrá ferðir og ferðaplön með TableView, síu, dagsetningum, athugasemdum og kostnaði.
 
-## Uppfærslur á verkefnum (valkvætt)
+## Bygging og keyrsla
 
-**Til að missa ekki af nýjum vikum:**
-- Smelltu á **Watch → All activity** á GitHub repo-inu  
-  Þá færðu tilkynningu þegar ný vika (Release) er sett inn.
-
-**Finna rétt verkefni:**
-- Hvert verkefni er merkt með **Release + Tag** (t.d. `Verkefni-1`)
-- Þú getur skoðað eldri útgáfur undir *Releases* á GitHub
-
-**Ef þú ert með fork:**
+### 1. Klónaðu repository
 ```bash
-git fetch upstream
-git merge upstream/main
+git clone https://github.com/NASPA365/Verkefni-4
+cd Verkefni-4
+```
+
+### 2. Byggðu verkefnið
+```bash
+mvn clean compile
+```
+
+### 3. Keyrðu forritið
+```bash
+mvn javafx:run
+```
+
+**Eða í einu skrefi:**
+```bash
+mvn clean javafx:run
+```
+
+### 4. Búa til JAR skrá (valfrjálst)
+```bash
+mvn clean package
+java -jar target/Verkefni-4-1.0.jar
+```
+
+## Kröfur (frá pom.xml)
+- **Java 25**
+- **Maven 3.11.0+** 
+- **JavaFX 25.0.1**
+- **MainClass:** `ModuleNafn/is.vidmot.FerdaplanApp`
+
+## Helstu eiginleikar
+- TableView með síu og flokkun
+- Bæta við/eyða/skoða ferðir
+- Tvísmellur til að opna ferð
+- Dagsetning frá og til
+- Athugasemdir og kostnaður
+
+## Útgáfur
+- **v1.0** - Tilbúin til notendaprófana
+- **v2.0** - Lokaverkefni (í vinnslu)
+
+## Höfundur
+NASPA365 - Verkefni 4
